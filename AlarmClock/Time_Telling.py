@@ -25,11 +25,19 @@ def minute():
 #this function will be able to play the sound of the time 
 def play(command):
     
+    #Interpreting the 
     if command == "hour":
         file_Path = str(hour()) + ".wav"
     elif command == "tens_minute":
         tens_minute = str(minute())
         file_Path = tens_minute[0]+ "0" + ".wav"
+    elif command == "ones_minute":
+        ones_minute = str(minute())
+        file_Path = ones_minute[1] + ".wav"
+    elif command == "its":
+        file_Path = "its.wav"
+    elif command == "o":
+        file_Path = "o.wav"
 
     #Create a MediaPlayer with the default instance
     player = instance.media_player_new()
@@ -45,6 +53,6 @@ def play(command):
 
 def main():
     
-    play("tens_minute")
+    play("ones_minute")
     
 main()
